@@ -195,21 +195,22 @@ def team_colors(team_name)
   
   
   def player_numbers(team_name)
-    new_array = [] 
+   new_array = [] 
     game_hash.each do |location, team|
         if team[:team_name] == team_name  
         
         team.each do |attribute, data|
     if attribute == :players 
-      data.each do |player|
+      data.map do |player|
         new_array << player[:number]
+      player[:number]
       end 
           
           end
         end 
       end 
     end 
-          new_array
+         new_array
       end 
 
   
